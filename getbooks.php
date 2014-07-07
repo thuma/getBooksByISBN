@@ -1,15 +1,21 @@
 <?php
+
+// Check if data is posted:
 if(isset($_POST['isbns'])){
 
+// Get data to strig variable:
 $isbns = $_POST['isbns'];
 
+// Split data to array:
 $isbnsa = explode("\n", $isbns);
 
+// Send header with csv fild header and name, no cache:
 header("Content-type: text/csv");
 header("Content-Disposition: attachment; filename=books.csv");
 header("Pragma: no-cache");
 header("Expires: 0");
 
+// Print the header for the CSV fie.
 print '"ISBN","Title","Publisher","Date","Language","KB link"';
 foreach($isbnsa as &$isbn){
 $isbn=trim($isbn);
