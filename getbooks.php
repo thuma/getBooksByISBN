@@ -36,7 +36,7 @@ ISBN list:<br />
 </form>
 <p>
 Add one ISBN number for each line. </br>
-Then klick get book data.<br />
+Then click get book data.<br />
 A csv file will be returned with the available data.
 </p>
 </body>
