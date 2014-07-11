@@ -24,6 +24,9 @@ if(isset($_POST['isbns'])){
     // Remove white cars.
     $isbn=trim($isbn);
     
+    // Wait to not overload the Libiris server
+    usleep(200000);
+    
     // Get book data form KB libirs API.
     $book = json_decode(file_get_contents('http://libris.kb.se/xsearch?format=json&query='.$isbn));
     
