@@ -22,7 +22,7 @@ if(isset($_POST['isbns'])){
   foreach($isbnsa as &$isbn){
     
     // Remove white cars.
-    $isbn= str_replace("[^0-9]","",$isbn);
+    $isbn= preg_replace("[^0-9]","",$isbn);
     
     // Wait to not overload the Libiris server
     usleep(200000);
