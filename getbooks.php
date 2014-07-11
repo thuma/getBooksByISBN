@@ -22,7 +22,7 @@ if(isset($_POST['isbns'])){
   foreach($isbnsa as &$isbn){
     
     // Remove white cars.
-    $isbn=trim($isbn);
+    $isbn= str_replace("[^0-9]","",$isbn);
     
     // Wait to not overload the Libiris server
     usleep(200000);
@@ -58,7 +58,7 @@ ISBN list:<br />
 <input type="submit" value="Get book data">
 </form>
 <p>
-Add one ISBN number for each line. </br>
+Add one ISBN number for each line. <br />
 Then click get book data.<br />
 A csv file will be returned with the available data.
 </p>
